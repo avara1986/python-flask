@@ -8,7 +8,10 @@ class FlaskTracer(opentracing.Tracer):
 
     @param tracer the OpenTracing tracer implementation to trace requests with
     '''
-    def __init__(self, tracer, trace_all_requests=False, app=None, traced_attributes=[]):
+    def __init__(self):
+        pass
+
+    def init_app(self, tracer, trace_all_requests=False, app=None, traced_attributes=[]):
         if not callable(tracer):
             self.__tracer = tracer
         else:
